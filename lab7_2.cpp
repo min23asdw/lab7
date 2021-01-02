@@ -3,6 +3,19 @@
 #include<string>
 using namespace std;
 
+char findGrade(float score){
+char x;
+if(score > 90.0){x = 'A';}
+else if(score>75.0&&score<=90.0){x = 'B'; }
+else if(score>60.0&&score<=75.0){x = 'C';}
+else if(score>45.0&&score<=60.0){x = 'D';}
+else if(score<=45.0){x = 'F';}
+
+
+
+
+	return x;
+}
 //[Missing Code 1] Write definition of the function findGrade() here.
 
 int main(){
@@ -11,18 +24,20 @@ int main(){
 	cout << "Enter the number of students: ";
 	cin >> N;
 	string name[N];
-	float score[N];	
-	
-	//Store names and scores of students into an array 
+	float score[N];
+
+	//Store names and scores of students into an array
 	while(i < N){
 		cout << "Name of student " << i+1 << ": ";
 		cin.ignore();
+		getline(cin,name[i]);
 		//[Missing Code 2] Get name of the i-th students that may include whitespace.
 		cout << "Score of student " << i+1 << ": ";
+		cin >> score[i];
 		//[Missing Code 3] Get score of the i-th students.
 		i++;
 	}
-	
+
 	//Print names scores and grades
 	i = 0;
 	cout << "---------------------------------------------\n";
@@ -31,7 +46,7 @@ int main(){
 	while(i < N){
 		cout << setw(25) << name[i] << setw(8) << score[i] << setw(8) << findGrade(score[i]) << "\n";
 		i++;
-	} 
+	}
 	cout << "---------------------------------------------\n";
 
 	return 0;
