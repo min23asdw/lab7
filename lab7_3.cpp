@@ -8,7 +8,7 @@ int main(){
 cout << "Enter your age: ";cin >> age;
 if(age<=20){
        cout << "Enter your height: ";cin >> height;
-               if(height<160){status = "BEST FRIEND";}
+               if(height<160){status = "UNFRIEND";}
           else if(height<175){status = "FRIEND";}
                else{cout << "Enter your property: ";cin >> property;
                  if(property>69000000){status = "MARRIED";}
